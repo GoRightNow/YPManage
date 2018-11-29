@@ -1,5 +1,6 @@
 package com.dao.mapper;
 
+import com.entity.dto.User.LoginDTO;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -9,5 +10,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface UserMapper{
     //根据名字查找用户
-    public String findUser(String name);
+    public LoginDTO findUser(String number , String password);
 }

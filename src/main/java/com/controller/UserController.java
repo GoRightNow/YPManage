@@ -1,9 +1,13 @@
 package com.controller;
 
 import com.entity.JSONResult;
+import com.entity.dto.User.LoginDTO;
+import com.entity.dto.User.LoginInputDTO;
 import com.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 /**
  * Created by Song on 2017/2/15.
@@ -20,13 +24,12 @@ public class UserController {
         this.userService = userService;
     }
 
-    @RequestMapping(value = "/show",method = RequestMethod.GET)
-    public JSONResult show(@RequestParam(value = "name")String name){
-        JSONResult<String> result = new JSONResult<String>();
-        String findResult = userService.findUser("ddd");
-        System.out.println(findResult);
-        String test = "dddd";
-        result.setData(test);
+    @RequestMapping(value = "/login",method = RequestMethod.GET)
+    public JSONResult show(@Valid LoginInputDTO input){
+        JSONResult<LoginDTO> result = new JSONResult<LoginDTO>();
+        LoginDTO loginDTO = new LoginDTO();
+        LoginDTO findResult = userService.findUser(input.getNumber(), input.getPassword());
+        result.setData(findResult);
         return result;
     }
 }

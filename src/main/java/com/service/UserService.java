@@ -2,6 +2,7 @@ package com.service;
 
 import com.dao.mapper.UserMapper;
 import com.entity.User;
+import com.entity.dto.User.LoginDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,5 +12,5 @@ import org.springframework.stereotype.Service;
  */
 public interface UserService {
     //根据名字查找用户
-    public String findUser(String name);
+    public LoginDTO findUser(String number, String password);
 }
