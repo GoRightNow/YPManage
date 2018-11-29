@@ -1,5 +1,7 @@
 package com.dao.mapper;
 
+import com.entity.Sending;
+import com.entity.Storage;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -9,4 +11,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface SaveMapper {
 
+    public Integer saveStorage(Storage storage);
+
+    public Integer saveSending(Sending sending);
 }

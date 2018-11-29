@@ -11,14 +11,18 @@ public class Sending {
     private Integer sending_addressId;
     private String sendingType;
     private String courierNumber;
+    private String addresseeName;
+    private String addresseeTel;
 
-    public Sending(Integer id, Integer userId, Integer areaId, Integer sending_addressId, String sendingType, String courierNumber) {
+    public Sending(Integer id, Integer userId, Integer areaId, Integer sending_addressId, String sendingType, String courierNumber, String addresseeName, String addresseeTel) {
         this.id = id;
         this.userId = userId;
         this.areaId = areaId;
         this.sending_addressId = sending_addressId;
         this.sendingType = sendingType;
         this.courierNumber = courierNumber;
+        this.addresseeName = addresseeName;
+        this.addresseeTel = addresseeTel;
     }
 
     public Sending() {
@@ -72,5 +76,21 @@ public class Sending {
 
     public void setCourierNumber(String courierNumber) {
         this.courierNumber = courierNumber;
+    }
+
+    public String getAddresseeName() {
+        return addresseeName;
+    }
+
+    public void setAddresseeName(String addresseeName) {
+        this.addresseeName = addresseeName;
+    }
+
+    public String getAddresseeTel() {
+        return addresseeTel;
+    }
+
+    public void setAddresseeTel(String addresseeTel) {
+        this.addresseeTel = addresseeTel;
     }
 }
