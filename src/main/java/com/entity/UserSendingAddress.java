@@ -2,28 +2,24 @@ package com.entity;
 
 import javax.persistence.*;
 
-/**
- * Created by Song on 2017/2/15.
- * Model 用户
- */
 @Entity
-@Table(name = "sys_user")
-public class User {
+@Table(name = "yp_user_sending_address")
+public class UserSendingAddress {
     private Integer id;
-    private String code;
+    private Integer userId;
+    private String address;
     private String name;
     private String phone;
-    private String password;
 
-    public User(Integer id, String code, String name, String phone, String password) {
+    public UserSendingAddress(Integer id, Integer userId, String address, String name, String phone) {
         this.id = id;
-        this.code = code;
+        this.userId = userId;
+        this.address = address;
         this.name = name;
         this.phone = phone;
-        this.password = password;
     }
 
-    public User() {
+    public UserSendingAddress() {
     }
 
     @Id
@@ -36,12 +32,20 @@ public class User {
         this.id = id;
     }
 
-    public String getCode() {
-        return code;
+    public Integer getUserId() {
+        return userId;
     }
 
-    public void setCode(String code) {
-        this.code = code;
+    public void setUserId(Integer userId) {
+        this.userId = userId;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public String getName() {
@@ -58,13 +62,5 @@ public class User {
 
     public void setPhone(String phone) {
         this.phone = phone;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 }
