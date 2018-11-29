@@ -7,7 +7,7 @@ import javax.persistence.*;
  * Model 用户
  */
 @Entity
-@Table(name = "sys_user")
+@Table(name = "yp_user")
 public class User {
     private Integer id;
     private String code;

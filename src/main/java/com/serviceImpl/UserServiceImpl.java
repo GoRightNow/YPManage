@@ -1,6 +1,7 @@
 package com.serviceImpl;
 
 import com.dao.mapper.UserMapper;
+import com.entity.dto.User.LoginDTO;
 import com.service.UserService;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
@@ -17,7 +18,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public String findUser(String name) {
-        return userMapper.findUser(name);
+    public LoginDTO findUser(String number, String password) {
+        return userMapper.findUser(number, password);
     }
 }
