@@ -11,14 +11,19 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 @Service
 public class UserServiceImpl implements UserService {
-    private final UserMapper userMapper;
+  private final UserMapper userMapper;
 
-    public UserServiceImpl(UserMapper userMapper) {
-        this.userMapper = userMapper;
-    }
+  public UserServiceImpl(UserMapper userMapper) {
+    this.userMapper = userMapper;
+  }
 
-    @Override
-    public LoginDTO findUser(String number, String password) {
-        return userMapper.findUser(number, password);
-    }
+  @Override
+  public LoginDTO findUser(String number, String password) {
+    return userMapper.findUser(number, password);
+  }
+
+  @Override
+  public int addUser(String number, String password) {
+    return userMapper.addUser(number, password);
+  }
 }
