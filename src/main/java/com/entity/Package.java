@@ -9,12 +9,14 @@ public class Package {
     private Integer areaId;
     private String packageType;
     private Double price;
+    private String state;
 
-    public Package(Integer id, Integer areaId, String packageType, Double price) {
+    public Package(Integer id, Integer areaId, String packageType, Double price, String state) {
         this.id = id;
         this.areaId = areaId;
         this.packageType = packageType;
         this.price = price;
+        this.state = state;
     }
 
     public Package() {
@@ -52,5 +54,13 @@ public class Package {
 
     public void setPrice(Double price) {
         this.price = price;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
     }
 }
