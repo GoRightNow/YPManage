@@ -50,4 +50,12 @@
             SELECT @@IDENTITY AS Id
         </selectKey>
     </insert>
+
+    <select id="findArea" resultType="com.entity.Area">
+        select * from yp_area;
+    </select>
+
+    <select id="findPackage" parameterType="java.lang.Integer" resultType="com.entity.Package">
+        select * from yp_package where area_id = #{areaId}
+    </select>
 </mapper>
